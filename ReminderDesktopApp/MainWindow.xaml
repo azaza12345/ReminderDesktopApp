@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReminderDesktopApp"
         mc:Ignorable="d"
-        Title="Reminder" Height="450" Width="800">
+        Title="Reminder" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <DataGrid x:Name="DataGridReminders" FontSize="16" FontWeight="Bold" Margin="8" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Id}" IsReadOnly="True" Header="№" Width="30"/>
+                <DataGridTextColumn Binding="{Binding Path=Title}" IsReadOnly="False" Header="Title" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path=DeadlineTime}" IsReadOnly="False" Header="Time" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Path=Description}" IsReadOnly="False" Header="Description" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

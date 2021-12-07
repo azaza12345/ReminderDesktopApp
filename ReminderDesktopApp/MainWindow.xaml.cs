@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ReminderDesktopApp.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,21 @@ namespace ReminderDesktopApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BindingList<Reminder> _reminders;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _reminders = new BindingList<Reminder>()
+            {
+                new Reminder { DeadlineTime = DateTime.Now },
+                new Reminder { Title = "Lol" }
+            };
+
+            DataGridReminders.ItemsSource = _reminders;
         }
     }
 }
