@@ -9,12 +9,12 @@ using Reminder.Entities;
 
 namespace Reminder.DAL
 {
-    public class SqlDatabaseAccess : IDatabaseAccess<TaskToDo>
+    public class TaskToDoDatabaseAccess : IDatabaseAccess<TaskToDo>
     {
         private readonly string _connectionString;
-        public SqlDatabaseAccess()
+        public TaskToDoDatabaseAccess(string connectionString)
         {
-            _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=RemindersDb;Integrated Security=True";
+            _connectionString = connectionString;
         }
 
         public BindingList<TaskToDo> GetAllEntities()

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.DAL", "Reminder.DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Entities", "Reminder.Entities\Reminder.Entities.csproj", "{2DE69AD3-39E4-44F3-9CEB-0846AD8293E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminder.Core", "Reminder.Core\Reminder.Core.csproj", "{F957FF58-D4C3-4CC1-9609-E01FA4CB87F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2DE69AD3-39E4-44F3-9CEB-0846AD8293E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE69AD3-39E4-44F3-9CEB-0846AD8293E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE69AD3-39E4-44F3-9CEB-0846AD8293E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F957FF58-D4C3-4CC1-9609-E01FA4CB87F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F957FF58-D4C3-4CC1-9609-E01FA4CB87F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F957FF58-D4C3-4CC1-9609-E01FA4CB87F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F957FF58-D4C3-4CC1-9609-E01FA4CB87F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

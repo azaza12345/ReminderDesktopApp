@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Reminder.Core\Reminder.Core.csproj">
+      <Project>{f957ff58-d4c3-4cc1-9609-e01fa4cb87f0}</Project>
+      <Name>Reminder.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reminder.DAL\Reminder.DAL.csproj">
       <Project>{986164b6-804b-4949-85f4-ac6a5f40ff1c}</Project>
       <Name>Reminder.DAL</Name>

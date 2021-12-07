@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccess.cs" />
-    <Compile Include="SqlDatabaseAccess.cs" />
+    <Compile Include="IDatabaseAccess.cs" />
+    <Compile Include="TaskToDoDatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

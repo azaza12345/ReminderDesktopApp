@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Configuration;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Reminder.DAL;
+using Reminder.Core;
 using Reminder.Entities;
 
 namespace ReminderDesktopApp
@@ -23,19 +11,21 @@ namespace ReminderDesktopApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BindingList<TaskToDo> _reminders;
+        private readonly TaskToDoService _taskToDoService;
+        private BindingList<TaskToDo> _tasks;
         public MainWindow()
         {
+            var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;;
+            _taskToDoService = new TaskToDoService(connectionString);
             InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var test = new SqlDatabaseAccess();
-            _reminders = test.GetAllEntities();
+            _tasks = _taskToDoService.GetAllTasks();
 
-            DataGridReminders.ItemsSource = _reminders;
-            _reminders.ListChanged += OnListChanged;
+            DataGridReminders.ItemsSource = _tasks;
+            _tasks.ListChanged += OnListChanged;
         }
 
         private void OnListChanged(object sender, ListChangedEventArgs e)
