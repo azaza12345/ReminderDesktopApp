@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ReminderDesktopApp.Models
+namespace Reminder.Entities
 {
-    class Reminder : INotifyPropertyChanged
+    public sealed class TaskToDo : INotifyPropertyChanged
     {
         private string _title;
         private string _description;
@@ -16,8 +12,7 @@ namespace ReminderDesktopApp.Models
         public DateTime DeadlineTime { get; set; }
         public string Title
         {
-            get
-            { return _title; }
+            get => _title;
             set
             {
                 if (_title == value)
@@ -29,15 +24,12 @@ namespace ReminderDesktopApp.Models
         }
         public string Description
         {
-            get
-            {
-                return _description;
-            }
+            get => _description;
             set
             {
                 if (_description == value)
                     return;
-                
+
                 _description = value;
                 OnPropertyChanged("Description");
             }
@@ -45,7 +37,7 @@ namespace ReminderDesktopApp.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName = "")
+        private void OnPropertyChanged(string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

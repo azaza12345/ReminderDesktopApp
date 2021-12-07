@@ -1,5 +1,4 @@
-﻿using ReminderDesktopApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Reminder.DAL;
+using Reminder.Entities;
 
 namespace ReminderDesktopApp
 {
@@ -22,7 +23,7 @@ namespace ReminderDesktopApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BindingList<Reminder> _reminders;
+        private BindingList<TaskToDo> _reminders;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,13 +31,21 @@ namespace ReminderDesktopApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _reminders = new BindingList<Reminder>()
-            {
-                new Reminder { DeadlineTime = DateTime.Now },
-                new Reminder { Title = "Lol" }
-            };
+            var test = new SqlDatabaseAccess();
+            _reminders = test.GetAllEntities();
 
             DataGridReminders.ItemsSource = _reminders;
+            _reminders.ListChanged += OnListChanged;
+        }
+
+        private void OnListChanged(object sender, ListChangedEventArgs e)
+        {
+            if(e.ListChangedType == ListChangedType.ItemChanged ||
+                e.ListChangedType == ListChangedType.ItemAdded ||
+                e.ListChangedType == ListChangedType.ItemDeleted)
+            {
+                
+            }
         }
     }
 }
