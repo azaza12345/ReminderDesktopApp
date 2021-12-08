@@ -6,14 +6,19 @@
         xmlns:local="clr-namespace:ReminderDesktopApp"
         mc:Ignorable="d"
         Title="Reminder" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <DataGrid x:Name="DataGridReminders" FontSize="16" FontWeight="Bold" Margin="8" AutoGenerateColumns="False">
-            <DataGrid.Columns>
+    <DataGrid x:Name="DataGridTasks" FontSize="16" FontWeight="Bold" Margin="8" AutoGenerateColumns="False">
+        <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Id}" IsReadOnly="True" Header="№" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Path=Title}" IsReadOnly="False" Header="Title" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Path=DeadlineTime}" IsReadOnly="False" Header="Time" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Path=Description}" IsReadOnly="False" Header="Description" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=Description}" IsReadOnly="False" Header="Description" Width="300"/>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteButton" Content="Delete" Click="Delete_Button"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-    </Grid>
 </Window>

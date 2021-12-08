@@ -5,7 +5,7 @@ using Reminder.Entities;
 
 namespace Reminder.Core
 {
-    public class TaskToDoService
+    public class TaskToDoService : ITaskToDoService
     {
         private readonly IDatabaseAccess<TaskToDo> _databaseAccess;
         public TaskToDoService(string connectionString)
