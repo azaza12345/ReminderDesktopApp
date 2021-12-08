@@ -6,9 +6,6 @@ using Reminder.Entities;
 
 namespace ReminderDesktopApp
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly TaskToDoService _taskToDoService;
