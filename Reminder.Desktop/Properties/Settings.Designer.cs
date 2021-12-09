@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReminderDesktopApp.Properties
+namespace Reminder.Desktop.Properties
 {
 
 

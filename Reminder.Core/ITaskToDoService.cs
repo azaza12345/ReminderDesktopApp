@@ -6,8 +6,7 @@ namespace Reminder.Core
     public interface ITaskToDoService
     {
         BindingList<TaskToDo> GetAllTasks();
-        void AddTask(TaskToDo task);
-        void UpdateTask(TaskToDo task);
+        void AddOrUpdateTask(TaskToDo task);
         void DeleteTask(int id);
     }
 }

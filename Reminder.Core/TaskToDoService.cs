@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel;
 using Reminder.DAL;
 using Reminder.Entities;
@@ -19,14 +18,17 @@ namespace Reminder.Core
             return result;
         }
 
-        public void AddTask(TaskToDo task)
+        public void AddOrUpdateTask(TaskToDo task)
         {
-            _databaseAccess.Add(task);
-        }
-
-        public void UpdateTask(TaskToDo task)
-        {
-            _databaseAccess.Update(task);
+            var gottenTask = _databaseAccess.GetById(task.Id);
+            if (gottenTask.Id == 0)
+            {
+                _databaseAccess.Add(task);
+            }
+            else
+            {
+                _databaseAccess.Update(task);
+            }
         }
         
         public void DeleteTask(int id)

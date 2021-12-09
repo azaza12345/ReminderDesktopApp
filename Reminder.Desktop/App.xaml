@@ -1,7 +1,7 @@
-﻿<Application x:Class="ReminderDesktopApp.App"
+﻿<Application x:Class="Reminder.Desktop.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ReminderDesktopApp"
+             xmlns:local="clr-namespace:Reminder.Desktop"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
