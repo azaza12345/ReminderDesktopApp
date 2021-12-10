@@ -22,7 +22,6 @@ namespace Reminder.Desktop
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _tasks = _taskToDoService.GetAllTasks();
-
             DataGridTasks.ItemsSource = _tasks;
         }
 

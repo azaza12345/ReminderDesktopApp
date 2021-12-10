@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel;
+using Reminder.Entities;
 
 namespace Reminder.DAL
 {
-    public interface IDatabaseAccess<T> where T: class
+    public interface IDatabaseAccess<T> where T: BaseEntity
     {
         BindingList<T> GetAll();
         T GetById(int id);

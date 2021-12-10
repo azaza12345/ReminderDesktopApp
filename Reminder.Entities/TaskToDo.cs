@@ -3,12 +3,10 @@ using System.ComponentModel;
 
 namespace Reminder.Entities
 {
-    public sealed class TaskToDo : INotifyPropertyChanged
+    public sealed class TaskToDo : BaseEntity, INotifyPropertyChanged
     {
         private string _title;
         private string _description;
-
-        public int Id { get; set; }
         public DateTime DeadlineTime { get; set; }
         public string Title
         {
