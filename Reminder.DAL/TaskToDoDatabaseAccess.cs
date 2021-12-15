@@ -19,7 +19,8 @@ namespace Reminder.DAL
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
-                var sqlQuery = "SELECT * FROM Tasks";
+                //var sqlQuery = "SELECT * FROM Tasks";
+                var sqlQuery = "execute Tasks_GetAll";
                 
                 var command = new SqlCommand(sqlQuery, connection);
                 var reader = command.ExecuteReader();
