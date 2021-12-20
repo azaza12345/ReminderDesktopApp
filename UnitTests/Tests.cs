@@ -1,4 +1,5 @@
-﻿using Reminder.Core;
+﻿using System;
+using Reminder.Core;
 using Xunit;
 
 namespace UnitTests
@@ -11,7 +12,7 @@ namespace UnitTests
         [Fact]
         public void Test1()
         {
-            Assert.True(true);
+            
         }
     }
 }
