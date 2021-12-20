@@ -55,10 +55,10 @@ namespace Reminder.DAL
                 {
                     var newTask = new TaskToDo
                     {
-                        Id = int.Parse(reader.GetValue(0).ToString()),
-                        Title = reader.GetValue(1).ToString(),
-                        DeadlineTime = Convert.ToDateTime(reader.GetValue(2)),
-                        Description = reader.GetValue(3).ToString()
+                        Id = reader.GetInt32(0),
+                        Title = reader.GetString(1),
+                        DeadlineTime = reader.GetDateTime(2),
+                        Description = reader.GetString(3)
                     };
                     return newTask;
                 }

@@ -8,7 +8,7 @@ namespace DatabaseFiller
         {
             var connectionString = @"Data Source=CMDB-80194;Initial Catalog=RemindersDb;Integrated Security=True";
             var taskToDoService = new TaskToDoService(connectionString);
-            var filler = new Filler(taskToDoService, 15);
+            var filler = new Filler(taskToDoService, 15000);
 
             filler.FillTableWithRandomValues(5, 9);
         }
