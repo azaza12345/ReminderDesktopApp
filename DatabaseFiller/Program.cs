@@ -6,10 +6,11 @@ namespace DatabaseFiller
     {
         public static void Main(string[] args)
         {
-            var connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=RemindersDb;Integrated Security=True";
-            var filler = new Filler(new TaskToDoService(connectionString), 15);
+            var connectionString = @"Data Source=CMDB-80194;Initial Catalog=RemindersDb;Integrated Security=True";
+            var taskToDoService = new TaskToDoService(connectionString);
+            var filler = new Filler(taskToDoService, 15);
 
-            filler.FillTableWithRandomValues();
+            filler.FillTableWithRandomValues(5, 9);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DatabaseFiller
             _entitiesCount = entitiesCount;
         }
 
-        public void FillTableWithRandomValues()
+        public void FillTableWithRandomValues(int titleLength, int descriptionLength)
         {
             var randomizer = new StringRandomizer();
 
@@ -23,9 +23,9 @@ namespace DatabaseFiller
             {
                 var taskToDo = new TaskToDo
                 {
-                    Title = randomizer.GetRandomString(5),
-                    DeadlineTime = Convert.ToDateTime("03-03-2002"),
-                    Description = randomizer.GetRandomString(9)
+                    Title = randomizer.GetRandomString(titleLength),
+                    DeadlineTime = DateTime.Now,
+                    Description = randomizer.GetRandomString(descriptionLength)
                 };
                 
                 _taskToDoService.AddOrUpdateTask(taskToDo);

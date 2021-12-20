@@ -14,7 +14,7 @@ namespace Reminder.Desktop
         private BindingList<TaskToDo> _tasks;
         public MainWindow()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;;
+            var connectionString = ConfigurationManager.ConnectionStrings["DesktopConnection"].ConnectionString;;
             _taskToDoService = new TaskToDoService(connectionString);
             InitializeComponent();
         }
